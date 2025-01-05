@@ -1,0 +1,92 @@
+"use client";
+import { FileDown } from "lucide-react";
+import React from "react";
+import { Button } from "./ui/button";
+import Image from "next/image";
+import profile from "@/assets/profile.jpg";
+import { Socials } from "./Socials";
+import Link from "next/link";
+import { PiMapPinLineLight, PiStudent } from "react-icons/pi";
+import { motion } from "framer-motion";
+
+const Hero = () => {
+  return (
+    <section className="flex flex-col items-start mt-8  transition-all gap-8 md:flex-row-reverse md:items-center md:justify-between">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.2,
+          ease: [0, 0.71, 0.2, 1.01],
+        }}
+        whileHover={{
+          scale: 1.05,
+          transition: { duration: 0.2 },
+        }}
+      >
+        <Image
+          className="rounded-full grayscale sm:rounded-lg"
+          src={profile}
+          alt="Photo of Rajesh Choudhary"
+          width={175}
+          height={175}
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-col"
+      >
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="font-serif sm:text-5xl text-3xl tracking-wide decoration-border/75 decoration-2
+    
+           "
+        >
+          Rajesh Choudhary
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="mt-2 text-xl sm:text-3xl bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block   font-light sm:font-normal  "
+        >
+          Software Developer
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-2 flex  gap-2 items-center  font-light"
+        >
+          <PiMapPinLineLight className="size-5" />{" "}
+          <span>Rajasthan, India </span>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-2 flex  gap-2 items-center  font-light"
+        >
+          <PiStudent className="size-5" /> <span>IIT Kanpur </span>
+        </motion.p>
+
+        <section className="mt-8 flex items-center gap-8">
+          <Link href="/resume.pdf" target="_blank">
+            <Button variant="outline">
+              <span className="font-semibold">Resume </span>
+              <FileDown className="ml-2 size-5" />
+            </Button>
+          </Link>
+          <Socials />
+        </section>
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
