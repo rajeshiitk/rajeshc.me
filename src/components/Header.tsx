@@ -16,7 +16,10 @@ export function Header() {
       className="sticky top-0 z-50 bg-background/80 mx-auto w-full  backdrop-blur-sm"
     >
       <nav className=" flex h-16 items-center justify-between">
-        <Link href="/" className="text-xl font-bold">
+        <Link
+          href="/"
+          className="text-xl font-bold bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block"
+        >
           RC
         </Link>
         <div className="flex items-center gap-4">
