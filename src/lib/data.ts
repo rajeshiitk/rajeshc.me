@@ -1,3 +1,6 @@
+// Plain public/ paths need the GitHub Pages base path; next/image does not add it.
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const PROJECT_IMAGE_SIZE = {
   width: 1440,
   height: 900,
@@ -75,7 +78,7 @@ export const projects = [
     tagline: "AI video caption editor with paying users",
     description:
       "Captions in 93 languages with provider fallback, Razorpay subscriptions, and a customised Hinglish Whisper model on Modal serverless GPUs at ~60% lower cost per minute.",
-    image: "/lumacaption.png",
+    image: `${base}/lumacaption.png`,
     accent: "#c4f04d",
     link: "https://www.lumacaption.com",
     tags: ["React", "TypeScript", "Supabase", "Razorpay", "Modal"],
@@ -85,7 +88,7 @@ export const projects = [
     tagline: "Video chat platform",
     description:
       "Interest-based matching over Socket.io and peer-to-peer WebRTC calls, a self-hosted TURN relay for networks where direct calls fail, and on-device NSFW detection.",
-    image: "/blinzo.png",
+    image: `${base}/blinzo.png`,
     accent: "#a855f7",
     link: "https://blinzo.chat",
     tags: ["Next.js", "WebRTC", "Socket.io", "Node.js"],
@@ -95,7 +98,7 @@ export const projects = [
     tagline: "Voice-powered mobile video editor, in development",
     description:
       "An Android video editor with a Flutter UI over a native Rust engine: multi-track timeline, keyframes, GPU rendering with effects and masks, and hardware H.264 export. On-device ML runs on the GPU for cutouts, beauty and AutoCut. Two 4K tracks play together without stutter.",
-    image: "/swishcut.png",
+    image: `${base}/swishcut.png`,
     accent: "#f97316",
     link: "https://swishcut.com",
     tags: ["Flutter", "Rust", "OpenGL ES", "LiteRT"],

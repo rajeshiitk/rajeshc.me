@@ -5,7 +5,6 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 import profile from "@/assets/profile.jpg";
 import { Socials } from "./Socials";
-import Link from "next/link";
 import { PiBriefcase, PiMapPinLineLight, PiStudent } from "react-icons/pi";
 import { motion } from "framer-motion";
 
@@ -90,12 +89,16 @@ const Hero = () => {
         </motion.p>
 
         <section className="mt-8 flex items-center gap-8">
-          <Link href="/resume.pdf" target="_blank">
-            <Button variant="outline">
+          <Button variant="outline" asChild>
+            <a
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/resume.pdf`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span className="font-semibold">Resume </span>
               <FileDown className="ml-2 size-5" />
-            </Button>
-          </Link>
+            </a>
+          </Button>
           <Socials />
         </section>
       </motion.div>
