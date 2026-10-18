@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# rajeshiitk.github.io
 
-## Getting Started
+My personal portfolio: who I am, what I own at work, and the products I build on my own.
 
-First, run the development server:
+**Live:** [rajeshiitk.github.io](https://rajeshiitk.github.io/) · [rajeshch.vercel.app](https://rajeshch.vercel.app)
+
+## What's on the page
+
+- **Hero:** role, location, education, current job, resume download and social links.
+- **Skills:** the languages and tools I use day to day.
+- **Experience:** my work at K12 Techno Services, one block per product I own (BASE, Eduvate Admin, Orchids School Connect, MySchoolGate, Eduvate B2B) plus my role across the mobile team.
+- **Products I've built:** LumaCaption, Blinzo and SwishCut, each with a screenshot that turns to colour on hover.
+- **Contact:** email, phone and location with one-click copy, and a contact form that emails me.
+
+## Stack
+
+- [Next.js 15](https://nextjs.org) (App Router) with React 19 and TypeScript
+- [Tailwind CSS](https://tailwindcss.com) with [shadcn/ui](https://ui.shadcn.com) components
+- [Framer Motion](https://www.framer.com/motion/) for the entrance animations
+- [next-themes](https://github.com/pacocoursey/next-themes) for dark and light mode
+- [Web3Forms](https://web3forms.com) for the contact form, so there is no backend to run
+
+## Run it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Edit the content
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Almost everything lives in one file, `src/lib/data.ts`:
 
-## Learn More
+- `experience`: role, dates, summary, and each product's description, points and tags.
+- `projects`: title, tagline, description, screenshot, link, tags and hover glow colour (`accent`).
 
-To learn more about Next.js, take a look at the following resources:
+Other places:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| What | Where |
+| --- | --- |
+| Name, title, location, education | `src/components/hero.tsx` |
+| Skills list | `src/components/Skills.tsx` |
+| Contact details | `src/components/contact/contact-info.tsx` |
+| Contact form access key | `src/components/contact/contact-form.tsx` |
+| Profile photo | `src/assets/profile.jpg` |
+| Resume PDF | `public/resume.pdf` |
+| Project screenshots | `public/*.png` (1440×900) |
+| Colours and font size | `src/app/globals.css` |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+The site deploys to two places from `main`:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **GitHub Pages:** `.github/workflows/pages.yml` builds a static export and publishes it on every push. The export settings in `next.config.ts` only apply when `GITHUB_PAGES=true`. The workflow fills in the base path, which is empty here because this is the `rajeshiitk.github.io` user site.
+- **Vercel:** builds the normal Next.js app with image optimisation. It ignores the Pages settings.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To test the Pages build locally:
+
+```bash
+GITHUB_PAGES=true npm run build
+npx serve out
+```
+
+The output lands in `out/`.
