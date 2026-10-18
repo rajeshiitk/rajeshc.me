@@ -19,7 +19,7 @@ const contactDetails = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Jaipur, Rajasthan, India",
+    value: "Bengaluru, India",
     href: "#",
   },
 ];

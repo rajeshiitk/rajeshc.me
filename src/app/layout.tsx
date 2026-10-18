@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rajesh Choudhary | Software Engineer",
+  title: "Rajesh Choudhary | Mobile & Full-Stack Engineer",
   description:
-    "Full-stack developer with a passion for building great products.",
+    "Mobile and full-stack engineer. Flutter, React Native and Django. I own products end to end, from architecture to store releases.",
 };
 
 export default function RootLayout({

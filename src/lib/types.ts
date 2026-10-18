@@ -1,5 +1,6 @@
 export interface Project {
   title: string;
+  tagline: string;
   description: string;
   image: string;
   link: string;

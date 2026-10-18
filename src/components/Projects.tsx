@@ -29,7 +29,7 @@ const item = {
 
 export function Projects() {
   return (
-    <section className="container py-24" id="projects">
+    <section className="container py-12" id="projects">
       <div className="space-y-8">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           className="text-3xl font-bold"
         >
-          Featured Projects
+          My fun SaaS in production
         </motion.h2>
 
         <motion.div
@@ -49,7 +49,7 @@ export function Projects() {
           className="grid gap-8 md:grid-cols-2"
         >
           {projects.map((project) => (
-            <motion.div key={project.title} variants={item}>
+            <motion.div key={project.title} variants={item} className="h-full">
               <ProjectCard project={project} />
             </motion.div>
           ))}

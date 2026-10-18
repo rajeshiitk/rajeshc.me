@@ -7,13 +7,35 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 
+// Web3Forms public access key (safe to ship in client code).
+const WEB3FORMS_KEY = "c622a1e0-b4a0-435a-8aa0-3360384e3052";
+
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"sent" | "error" | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => setIsSubmitting(false), 1000);
+    setStatus(null);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("from_name", "rajeshc.me contact form");
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+      });
+      const json = await res.json();
+      if (!json.success) throw new Error(json.message);
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -26,11 +48,16 @@ export function ContactForm() {
       className="space-y-4"
     >
       <div className="grid grid-cols-2 gap-4">
-        <Input placeholder="Name" required />
-        <Input type="email" placeholder="Email" required />
+        <Input name="name" placeholder="Name" required />
+        <Input name="email" type="email" placeholder="Email" required />
       </div>
-      <Input placeholder="Subject" required />
-      <Textarea placeholder="Your message" className="min-h-[150px]" required />
+      <Input name="subject" placeholder="Subject" required />
+      <Textarea
+        name="message"
+        placeholder="Your message"
+        className="min-h-[150px]"
+        required
+      />
       <Button type="submit" className="w-full" disabled={isSubmitting}>
         {isSubmitting ? (
           "Sending..."
@@ -41,6 +68,16 @@ export function ContactForm() {
           </>
         )}
       </Button>
+      {status === "sent" && (
+        <p className="text-sm text-green-500">
+          Thanks! Your message was sent. I&apos;ll get back to you soon.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="text-sm text-red-500">
+          Something went wrong. Please email me at rajeshch.dev@gmail.com.
+        </p>
+      )}
     </motion.form>
   );
 }

@@ -1,37 +1,68 @@
 "use client";
 import {
-  SiAmazonec2,
-  SiCss3,
+  SiAndroid,
+  SiCelery,
+  SiCodemagic,
+  SiCplusplus,
   SiDart,
+  SiDjango,
   SiDocker,
-  SiExpress,
+  SiExpo,
+  SiFirebase,
   SiFlutter,
   SiGit,
-  SiGooglecloud,
-  SiGraphql,
-  SiHtml5,
   SiJavascript,
-  SiKubernetes,
-  SiMongodb,
-  SiNetlify,
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
-  SiPostman,
+  SiPython,
   SiReact,
-  SiRust,
+  SiRedis,
+  SiSocketdotio,
+  SiSupabase,
   SiTailwindcss,
   SiTypescript,
-  SiVercel,
-  SiSupabase,
+  SiWebrtc,
 } from "react-icons/si";
 import { motion } from "framer-motion";
 
 import { Badge } from "./ui/badge";
 const skills = [
   {
+    item: "Dart",
+    icon: <SiDart />,
+  },
+  {
+    item: "Flutter",
+    icon: <SiFlutter />,
+  },
+  {
+    item: "TypeScript",
+    icon: <SiTypescript />,
+  },
+  {
     item: "JavaScript",
     icon: <SiJavascript />,
+  },
+  {
+    item: "Python",
+    icon: <SiPython />,
+  },
+  {
+    item: "C++",
+    icon: <SiCplusplus />,
+  },
+  {
+    item: "React Native",
+    icon: <SiReact />,
+  },
+  {
+    item: "Expo",
+    icon: <SiExpo />,
+  },
+  {
+    item: "Android",
+    icon: <SiAndroid />,
   },
   {
     item: "React",
@@ -42,95 +73,56 @@ const skills = [
     icon: <SiNextdotjs />,
   },
   {
-    item: "Tailwind CSS",
-    icon: <SiTailwindcss />,
-  },
-  {
     item: "Node.js",
     icon: <SiNodedotjs />,
   },
   {
-    item: "Express",
-    icon: <SiExpress />,
+    item: "Django",
+    icon: <SiDjango />,
   },
   {
-    item: "MongoDB",
-    icon: <SiMongodb />,
+    item: "Celery",
+    icon: <SiCelery />,
   },
   {
     item: "PostgreSQL",
     icon: <SiPostgresql />,
   },
   {
-    item: "GraphQL",
-    icon: <SiGraphql />,
-  },
-
-  {
-    item: "REST API",
-    icon: <SiPostman />,
-  },
-  {
-    item: "TypeScript",
-    icon: <SiTypescript />,
-  },
-  {
-    item: "Git",
-    icon: <SiGit />,
-  },
-
-  {
-    item: "Docker",
-    icon: <SiDocker />,
-  },
-  {
-    item: "Kubernetes",
-    icon: <SiKubernetes />,
-  },
-  {
-    item: "AWS EC2",
-    icon: <SiAmazonec2 />,
-  },
-  {
-    item: "Google Cloud",
-    icon: <SiGooglecloud />,
-  },
-
-  {
-    item: "Netlify",
-    icon: <SiNetlify />,
-  },
-  {
-    item: "Vercel",
-    icon: <SiVercel />,
-  },
-  {
-    item: "Rust",
-    icon: <SiRust />,
-  },
-  {
-    item: "Dart",
-    icon: <SiDart />,
-  },
-  {
-    item: "Flutter",
-    icon: <SiFlutter />,
-  },
-  {
-    item: "React Native",
-    icon: <SiReact />,
+    item: "Redis",
+    icon: <SiRedis />,
   },
   {
     item: "Supabase",
     icon: <SiSupabase />,
   },
   {
-    item: "HTML",
-    icon: <SiHtml5 />,
+    item: "Firebase",
+    icon: <SiFirebase />,
   },
   {
-    item: "CSS",
-    icon: <SiCss3 />,
+    item: "WebRTC",
+    icon: <SiWebrtc />,
+  },
+  {
+    item: "Socket.io",
+    icon: <SiSocketdotio />,
+  },
+  {
+    item: "Codemagic",
+    icon: <SiCodemagic />,
+  },
+  {
+    item: "Tailwind CSS",
+    icon: <SiTailwindcss />,
+  },
+  {
+    item: "Docker",
+    icon: <SiDocker />,
+  },
+  {
+    item: "Git",
+    icon: <SiGit />,
   },
 ];
 

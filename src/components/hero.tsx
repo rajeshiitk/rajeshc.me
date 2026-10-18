@@ -6,7 +6,7 @@ import Image from "next/image";
 import profile from "@/assets/profile.jpg";
 import { Socials } from "./Socials";
 import Link from "next/link";
-import { PiMapPinLineLight, PiStudent } from "react-icons/pi";
+import { PiBriefcase, PiMapPinLineLight, PiStudent } from "react-icons/pi";
 import { motion } from "framer-motion";
 
 const Hero = () => {
@@ -53,26 +53,40 @@ const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="mt-2 text-xl sm:text-3xl bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block   font-light sm:font-normal  "
+          className="mt-2 text-xl sm:text-3xl bg-gradient-to-r from-slate-700  dark:from-slate-200  dark:to-stone-300 to-stone-700 bg-clip-text text-transparent inline-block font-normal"
         >
-          Software Developer
+          Mobile &amp; Full-Stack Engineer
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-2 flex  gap-2 items-center  font-light"
+          className="mt-2 flex gap-2 items-center text-foreground/90"
         >
           <PiMapPinLineLight className="size-5" />{" "}
-          <span>Rajasthan, India </span>
+          <span>Bengaluru, India</span>
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-2 flex  gap-2 items-center  font-light"
+          className="mt-2 flex gap-2 items-center text-foreground/90"
         >
-          <PiStudent className="size-5" /> <span>IIT Kanpur </span>
+          <PiStudent className="size-5" /> <span>
+            IIT Kanpur{" "}
+            <span className="text-sm text-muted-foreground">
+              (B.Tech in Electrical Engineering)
+            </span>
+          </span>
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-2 flex gap-2 items-center text-foreground/90"
+        >
+          <PiBriefcase className="size-5" />{" "}
+          <span>Full-Stack App Developer at K12 Techno Services</span>
         </motion.p>
 
         <section className="mt-8 flex items-center gap-8">
