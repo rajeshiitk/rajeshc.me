@@ -31,26 +31,30 @@ export function Projects() {
   return (
     <section className="container py-12" id="projects">
       <div className="space-y-8">
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-3xl font-bold"
+          className="space-y-2"
         >
-          My fun SaaS in production
-        </motion.h2>
+          <h2 className="text-3xl font-bold">Products I&apos;ve built</h2>
+          <p className="text-lg text-muted-foreground">
+            Side projects I design, build and run on my own, from the app to
+            the servers and payments.
+          </p>
+        </motion.div>
 
         <motion.div
           variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid gap-8 md:grid-cols-2"
+          className="grid gap-8"
         >
-          {projects.map((project) => (
-            <motion.div key={project.title} variants={item} className="h-full">
-              <ProjectCard project={project} />
+          {projects.map((project, index) => (
+            <motion.div key={project.title} variants={item}>
+              <ProjectCard project={project} index={index} />
             </motion.div>
           ))}
         </motion.div>

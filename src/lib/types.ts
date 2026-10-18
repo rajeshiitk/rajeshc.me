@@ -3,6 +3,7 @@ export interface Project {
   tagline: string;
   description: string;
   image: string;
+  accent: string;
   link: string;
   tags: string[];
 }

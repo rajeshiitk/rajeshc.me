@@ -1,6 +1,6 @@
 export const PROJECT_IMAGE_SIZE = {
-  width: 500,
-  height: 350,
+  width: 1440,
+  height: 900,
 };
 
 export const experience = {
@@ -8,74 +8,62 @@ export const experience = {
   company: "K12 Techno Services Pvt. Ltd.",
   period: "Jun 2025 – Present",
   summary:
-    "I own 6 production apps and the BASE learning platform end to end. That means I design them, build the app and the backend, ship them to the App Store and Play Store, and fix them when something breaks in production. I also run releases for the whole mobile team, have shipped 100+ store releases, and mentored 2 developers.",
+    "I own 6 production apps and the BASE learning platform end to end, from architecture and backend to store releases and production support. I also run releases for the whole mobile team and mentor 2 developers. 100+ store releases shipped so far.",
   products: [
     {
       name: "BASE: JEE/NEET coaching platform",
-      about:
-        "An online coaching app where students preparing for JEE and NEET watch live classes, study, and take tests.",
+      about: "Live classes, study material and tests for JEE and NEET students.",
       stack: ["Flutter", "Django", "React", "Kubernetes"],
       points: [
-        "I own the whole product: the Flutter app for students, the Django backend, the React admin panel for teachers, and the Kubernetes deployment.",
-        "Built live classes: teachers stream from OBS, students watch over HLS through Cloudflare Stream, every class is recorded automatically, and live chat runs on Centrifugo. Designed for 50k+ users.",
-        "Built an AI study assistant. A student can ask about a lecture, a PDF, or any part of the screen, and the answer streams in as it is written. Usage is metered per student so costs stay under control.",
-        "Built tests and practice papers that keep working on a bad connection. Answers are saved on the phone and synced safely once the network is back, so nobody loses a submitted test.",
-        "Before launch, I load-tested the backend with k6 to find what breaks under heavy traffic, and added Sentry for errors, PostHog for analytics, and Clarity for session recordings.",
+        "Own the platform from architecture to production: Flutter app, Django backend, React admin and Kubernetes deployment.",
+        "Built the live-class system (HLS streaming, auto-recording, live chat), designed for 50k+ students.",
+        "Built the AI study assistant, with metered usage to keep LLM costs under control.",
+        "Load-tested it before launch, and set up error tracking, analytics and session replay.",
       ],
     },
     {
       name: "Eduvate Admin: staff app",
-      about:
-        "The app school staff and the sales team use every day for orders, visits, and learning content.",
+      about: "The daily operations app for school staff and the sales team.",
       stack: ["Flutter", "BLoC", "Django"],
       points: [
-        "Built the Order Management System: customers, multi-step orders with live pricing, visits with location check-in, payments, approvals, e-signatures, and role-based access, so each person sees only what they should.",
-        "Photo and video uploads were failing 30+ times a day. I rebuilt them so files go straight to Google Cloud Storage with retries and compression. Failures dropped to zero.",
-        "Built ByteLearn, short video lessons with quiz questions inside the video and camera-based attention tracking.",
+        "Built the Order Management System end to end: pricing, approvals, e-signatures and role-based access.",
+        "Re-architected media uploads to go straight to cloud storage. Failures went from 30+ a day to zero.",
       ],
     },
     {
       name: "Orchids School Connect: parent app",
-      about:
-        "The app parents use to follow their child's school day: homework, the school bus, fees, and events.",
+      about: "The app parents use to follow their child's school day.",
       stack: ["Flutter", "Django", "Celery"],
       points: [
-        "Built homework uploads that survive a dropped connection. If the network drops, the upload continues where it stopped instead of starting over, and the same file is never saved twice.",
-        "Built live school-bus tracking, so parents see the bus move on a map in real time.",
-        "Built summer camp registration end to end, from choosing slots to paying online through Easebuzz.",
-        "Introduced Shorebird code push. Urgent fixes reach parents the same day, without waiting for app store review.",
+        "Designed resumable uploads with a Django control plane, so large files survive bad networks.",
+        "Introduced Shorebird code push. Critical fixes reach parents the same day, with no store review.",
       ],
     },
     {
       name: "MySchoolGate: face-recognition attendance",
-      about:
-        "A tablet kiosk at the school gate that marks staff attendance by recognising their face.",
+      about: "A kiosk at the school gate that marks staff attendance by face.",
       stack: ["Flutter", "TFLite", "ML Kit"],
       points: [
-        "Face recognition runs entirely on the tablet: ML Kit finds the face, a TFLite model turns it into a signature, and it is matched against registered staff. Nothing leaves the device to do this.",
-        "Works with or without internet. Attendance is marked locally and uploaded in batches, with photos, once the connection returns.",
+        "Built on-device face recognition with ML Kit and TFLite. No face leaves the device to be matched.",
+        "Offline-first: attendance keeps working without internet and syncs once the connection is back.",
       ],
     },
     {
       name: "Eduvate B2B: white-label school LMS",
-      about:
-        "A learning app sold to partner schools, where each school gets the app under its own name, logo, and colours.",
+      about: "A learning app sold to partner schools under their own brand.",
       stack: ["React Native", "Expo"],
       points: [
-        "Owned the app for teachers and students: lesson plans, homework, tests, e-books, attendance, and fees.",
-        "Built a theming engine that creates a full light and dark theme from one brand colour, and a pipeline that builds each school's branded app automatically.",
-        "Made it work on phones, tablets, and the large interactive panels in classrooms, where teachers log in by scanning a QR code.",
-        "Made it run well on cheap phones and old Android 8/9 devices, including a custom network layer for school servers without TLS 1.2 support.",
+        "Owned the product. Built the theming engine and build pipeline that ship every school its own branded app from one codebase.",
+        "Runs on phones, tablets, classroom panels and low-end Android 8/9 devices.",
       ],
     },
     {
       name: "Team and releases",
-      about: "How I work with the rest of the mobile team.",
+      about: "My role across the mobile team.",
       stack: ["Codemagic", "TestFlight", "Shorebird"],
       points: [
-        "I run releases for the whole mobile team: CI/CD builds on Codemagic, TestFlight, and getting apps through Play Store and App Store review.",
-        "Mentored 2 developers in mobile development, lead code review, and I am the person called when any of the six apps has a production issue.",
-        "Wrote an internal Flutter and Django training course, with assessments and an auto-scored coding task.",
+        "Run releases for the whole mobile team: CI/CD, TestFlight and App Store and Play Store review.",
+        "Mentor 2 developers, lead code review, and I am the escalation point for production issues.",
       ],
     },
   ],
@@ -88,6 +76,7 @@ export const projects = [
     description:
       "Captions in 93 languages with provider fallback, Razorpay subscriptions, and a customised Hinglish Whisper model on Modal serverless GPUs at ~60% lower cost per minute.",
     image: "/lumacaption.png",
+    accent: "#c4f04d",
     link: "https://www.lumacaption.com",
     tags: ["React", "TypeScript", "Supabase", "Razorpay", "Modal"],
   },
@@ -97,7 +86,18 @@ export const projects = [
     description:
       "Interest-based matching over Socket.io and peer-to-peer WebRTC calls, a self-hosted TURN relay for networks where direct calls fail, and on-device NSFW detection.",
     image: "/blinzo.png",
+    accent: "#a855f7",
     link: "https://blinzo.chat",
     tags: ["Next.js", "WebRTC", "Socket.io", "Node.js"],
+  },
+  {
+    title: "SwishCut",
+    tagline: "Voice-powered mobile video editor, in development",
+    description:
+      "An Android video editor with a Flutter UI over a native Rust engine: multi-track timeline, keyframes, GPU rendering with effects and masks, and hardware H.264 export. On-device ML runs on the GPU for cutouts, beauty and AutoCut. Two 4K tracks play together without stutter.",
+    image: "/swishcut.png",
+    accent: "#f97316",
+    link: "https://swishcut.com",
+    tags: ["Flutter", "Rust", "OpenGL ES", "LiteRT"],
   },
 ];

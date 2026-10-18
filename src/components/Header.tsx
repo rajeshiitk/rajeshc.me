@@ -15,14 +15,14 @@ export function Header() {
       animate={{ y: 0 }}
       className="sticky top-0 z-50 bg-background/80 mx-auto w-full  backdrop-blur-sm"
     >
-      <nav className=" flex h-16 items-center justify-between">
+      <nav className="flex h-12 items-center justify-between sm:h-16">
         <Link
           href="/"
-          className="text-xl font-bold bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block"
+          className="text-lg font-bold sm:text-xl bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block"
         >
           RC
         </Link>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-1 sm:gap-4">
           <Link href="https://github.com/rajeshiitk" target="_blank">
             <Button variant="ghost" size="icon">
               <Github className="h-5 w-5" />

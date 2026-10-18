@@ -130,7 +130,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-10 ">
       {/* <h2 className="text-3xl font-bold text-center mb-8">Skills</h2> */}
-      <motion.div className="flex flex-wrap gap-4 ">
+      <motion.div className="flex flex-wrap gap-2 sm:gap-4">
         {skills.map((skill, index) => (
           <motion.div
             key={index}

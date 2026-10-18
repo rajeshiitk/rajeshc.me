@@ -36,7 +36,7 @@ export function Experience() {
           <p className="text-lg text-foreground/90 leading-relaxed">{experience.summary}</p>
         </motion.div>
 
-        <div className="space-y-6 border-l pl-6">
+        <div className="space-y-8 border-l pl-4 sm:pl-6">
           {experience.products.map((product) => (
             <motion.div
               key={product.name}
@@ -50,7 +50,7 @@ export function Experience() {
               <p className="italic text-muted-foreground">
                 {product.about}
               </p>
-              <ul className="list-disc pl-5 space-y-2 text-foreground/90 leading-relaxed">
+              <ul className="list-disc pl-4 sm:pl-5 space-y-2 text-foreground/90 leading-relaxed">
                 {product.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}

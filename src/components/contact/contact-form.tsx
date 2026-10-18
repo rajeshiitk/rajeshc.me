@@ -58,7 +58,7 @@ export function ContactForm() {
         className="min-h-[150px]"
         required
       />
-      <Button type="submit" className="w-full" disabled={isSubmitting}>
+      <Button type="submit" className="h-11 w-full" disabled={isSubmitting}>
         {isSubmitting ? (
           "Sending..."
         ) : (

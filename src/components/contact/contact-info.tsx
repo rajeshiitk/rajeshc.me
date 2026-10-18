@@ -1,7 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Check, Copy, Mail, MapPin, Phone } from "lucide-react";
 
 const contactDetails = [
   {
@@ -13,45 +14,73 @@ const contactDetails = [
   {
     icon: Phone,
     label: "Phone",
-    value: "+91 96X0XXXXXX",
-    href: "tel:+91 96X0XXXXXX",
+    value: "+91 96807 02761",
+    href: "tel:+919680702761",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Bengaluru, India",
-    href: "#",
   },
 ];
 
 export function ContactInfo() {
+  const [copied, setCopied] = useState<string | null>(null);
+
+  const copy = async (label: string, value: string) => {
+    await navigator.clipboard.writeText(value);
+    setCopied(label);
+    setTimeout(() => setCopied(null), 1500);
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="space-y-6"
+      className="h-full"
     >
-      <div className="space-y-4">
+      <div className="flex h-full flex-col gap-4">
         {contactDetails.map((detail, index) => (
-          <motion.a
+          <motion.div
             key={detail.label}
-            href={detail.href}
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="flex items-center gap-4 p-4 rounded-lg border bg-card hover:bg-accent transition-colors"
+            className="flex flex-1 items-center gap-4 rounded-md bg-muted p-4"
           >
-            <div className="p-2 rounded-full bg-primary/10">
+            <div className="rounded-full bg-background p-2">
               <detail.icon className="h-5 w-5 text-primary" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <p className="font-medium">{detail.label}</p>
-              <p className="text-sm text-muted-foreground">{detail.value}</p>
+              {detail.href ? (
+                <a
+                  href={detail.href}
+                  className="text-sm text-muted-foreground hover:text-foreground hover:underline"
+                >
+                  {detail.value}
+                </a>
+              ) : (
+                <p className="text-sm text-muted-foreground">{detail.value}</p>
+              )}
             </div>
-          </motion.a>
+            <button
+              type="button"
+              onClick={() => copy(detail.label, detail.value)}
+              aria-label={`Copy ${detail.label.toLowerCase()}`}
+              title="Copy"
+              className="shrink-0 p-1 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              {copied === detail.label ? (
+                <Check className="h-4 w-4 text-green-500" />
+              ) : (
+                <Copy className="h-4 w-4" />
+              )}
+            </button>
+          </motion.div>
         ))}
       </div>
     </motion.div>
