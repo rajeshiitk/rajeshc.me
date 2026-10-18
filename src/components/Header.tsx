@@ -18,6 +18,7 @@ export function Header() {
       <nav className="flex h-12 items-center justify-between sm:h-16">
         <Link
           href="/"
+          prefetch={false}
           className="text-lg font-bold sm:text-xl bg-gradient-to-r from-slate-700  dark:from-slate-300  dark:to-stone-400 to-stone-700 bg-clip-text text-transparent inline-block"
         >
           RC
