@@ -13,7 +13,7 @@ export function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true, margin: "-100px" }}
-          className="text-3xl font-bold"
+          className="text-3xl sm:text-4xl font-semibold tracking-tight"
         >
           Experience
         </motion.h2>
@@ -29,11 +29,11 @@ export function Experience() {
             <h3 className="text-xl font-semibold">
               {experience.role} · {experience.company}
             </h3>
-            <span className="text-muted-foreground">
+            <span className="text-sm text-muted-foreground">
               {experience.period}
             </span>
           </div>
-          <p className="text-lg text-foreground/90 leading-relaxed">{experience.summary}</p>
+          <p className="max-w-[68ch] text-lg text-foreground/90 leading-relaxed">{experience.summary}</p>
         </motion.div>
 
         <div className="space-y-8 border-l pl-4 sm:pl-6">
@@ -46,11 +46,11 @@ export function Experience() {
               viewport={{ once: true, margin: "-50px" }}
               className="space-y-2"
             >
-              <h4 className="text-lg font-semibold">{product.name}</h4>
-              <p className="italic text-muted-foreground">
+              <h4 className="text-lg font-semibold text-foreground">{product.name}</h4>
+              <p className="text-muted-foreground">
                 {product.about}
               </p>
-              <ul className="list-disc pl-4 sm:pl-5 space-y-2 text-foreground/90 leading-relaxed">
+              <ul className="max-w-[72ch] list-disc pl-4 sm:pl-5 space-y-2 text-foreground/85 leading-relaxed marker:text-muted-foreground">
                 {product.points.map((point) => (
                   <li key={point}>{point}</li>
                 ))}

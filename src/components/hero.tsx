@@ -42,7 +42,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="font-serif sm:text-5xl text-3xl tracking-wide decoration-border/75 decoration-2
+          className="font-semibold sm:text-6xl text-4xl tracking-tight leading-none decoration-border/75 decoration-2
     
            "
         >

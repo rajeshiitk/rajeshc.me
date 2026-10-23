@@ -38,7 +38,7 @@ export function Projects() {
           viewport={{ once: true, margin: "-100px" }}
           className="space-y-2"
         >
-          <h2 className="text-3xl font-bold">Products I&apos;ve built</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Products I&apos;ve built</h2>
           <p className="text-lg text-muted-foreground">
             Side projects I design, build and run on my own, from the app to
             the servers and payments.

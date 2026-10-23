@@ -58,18 +58,18 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="flex flex-col gap-3 p-5 sm:p-6">
         <div className="flex flex-col gap-1 md:flex-row md:items-start md:justify-between md:gap-4">
           <div>
-            <p className="font-mono text-xs tracking-widest text-muted-foreground">
+            <p className="text-xs tabular-nums tracking-widest text-muted-foreground">
               {String(index + 1).padStart(2, "0")}
             </p>
             <h3 className="text-xl font-semibold">{project.title}</h3>
-            <p className="italic text-muted-foreground">{project.tagline}</p>
+            <p className="text-muted-foreground">{project.tagline}</p>
           </div>
           <span className="flex shrink-0 items-center gap-1 text-sm text-muted-foreground transition-colors group-hover:text-foreground">
             {domain}
             <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </span>
         </div>
-        <p className="leading-relaxed text-foreground/90">
+        <p className="leading-relaxed text-foreground/85">
           {project.description}
         </p>
         <div className="mt-auto flex flex-wrap gap-2 pt-2">

@@ -15,7 +15,7 @@ export function Contact() {
         className="space-y-8"
       >
         <div className="space-y-4 text-center">
-          <h2 className="text-3xl font-bold">Get in Touch</h2>
+          <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight">Get in Touch</h2>
           <p className="text-muted-foreground max-w-[600px] mx-auto">
             Have a project in mind? Let&apos;s discuss how we can work together
             to bring your ideas to life.
