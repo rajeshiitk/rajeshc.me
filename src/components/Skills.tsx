@@ -1,9 +1,7 @@
 "use client";
 import {
-  SiAndroid,
   SiCelery,
   SiCodemagic,
-  SiCplusplus,
   SiDart,
   SiDjango,
   SiDocker,
@@ -49,20 +47,12 @@ const skills = [
     icon: <SiPython />,
   },
   {
-    item: "C++",
-    icon: <SiCplusplus />,
-  },
-  {
     item: "React Native",
     icon: <SiReact />,
   },
   {
     item: "Expo",
     icon: <SiExpo />,
-  },
-  {
-    item: "Android",
-    icon: <SiAndroid />,
   },
   {
     item: "React",
